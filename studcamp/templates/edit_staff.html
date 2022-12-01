@@ -1,0 +1,117 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+<style>
+    #g{
+        height: 180vh;
+        background: url(https://www.edecofy.com/blog/wp-content/uploads/2019/08/School-Management-System-Edecofy.png);
+        background-size: cover;
+      }
+      #staff{
+        position:absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 400px;
+        background: white;
+        border-radius: 10px;
+        font-family: montserrat;
+        
+    }
+
+    .form input{
+            width: 240px;
+            height: 35px;
+            background: transparent;
+            border: 1px solid white;
+            border-top: none;
+            border-right: none;
+            color: white;
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin-top: 30px;
+            font-family: sans-serif;
+        }
+        
+    ::placeholder{
+            color: white;
+            font-family: Arial;
+        }
+        
+    #sub{
+        width: 340px;
+            height: 40px;
+            background: rgb(95, 95, 99);
+            border: none;
+            /* margin-top: 1px; */
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #fff;
+            transition: 0.4s ease;
+        
+
+    }
+</style>
+<form method="post" action="/update_staff/{{studcamp.id}}" id="g">
+    {% csrf_token %}
+ <div class="container" id="staff" >
+     <div class="row" >
+     
+         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
+           <br>
+             <h1 align="center">Staff Details Add<h1>
+            
+              <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <label for="sid" class="form-label"><h5>Staff ID:</h5></label>
+                <input type="text" id="sid" name="sid"  class="form-control" value="{{ studcamp.sid}}">
+              </div>
+              <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+               <label for="sname" class="form-label"><h5>Name:</h5></label>
+                 <input type="text" id="sname" name="sname" class="form-control" value="{{ studcamp.sname}}">
+              </div>
+              <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+               <label for="email" class="form-label"><h5>Email:</h5></label>
+               <input type="email" id="email" name="email" class="form-control" value="{{ studcamp.email}}">
+
+              </div>
+              <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <label for="phone" class="form-label"><h5>Phone Number:</h5></label>
+                <input type="number" id="phone" name="phone"  class="form-control" value="{{ studcamp.phone}}">
+               </div>
+                   <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="address" class="form-label"><h5>Address:</h5></label>
+                    <textarea type="text_area" id="address" name="address" class="form-control" value="{{ studcamp.address}}"></textarea>
+                   </div>
+               <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <label for="qualification" class="form-label"><h5>Educational Qualification:</h5></label>
+                <input type="text" id="qualification" name="qualification" class="form-control" value="{{ studcamp.qualification}}">
+               </div>
+               <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <label for="subject" class="form-label"><h5>Subject:</h5></label>
+                  <input type="text" id="subject" name="subject" class="form-control" value="{{ studcamp.subject}}">
+               </div>
+               <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <label for="salary" class="form-label"><h5>Salary:</h5></label>
+                  <input type="number" id="salary" name="salary" class="form-control" value="{{ studcamp.salary}}">
+               </div>
+              <div class="col col-12 col-sm-6 col-md-6 col lg-6 col-xl-6 col-xxl-6" style="padding: 10px;">
+            <center><button type="submit" name="submit" id="sub" class="btn btn-dark">Update</button></center>
+             </div>
+            
+         <br>
+             <!-- <div align="center" style="color:black"> <a href="reset.html">Forgot Password?</a></div> -->
+                 
+               </div>  
+             
+         </div>
+     </div>
+ </div>
+             
+         </div>
+     </div>
+ </div>
+</form>
+
+<br><br><br>
+
+{% endblock %}

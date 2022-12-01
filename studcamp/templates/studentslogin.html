@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://www.edecofy.com/blog/wp-content/uploads/2019/08/School-Management-System-Edecofy.png" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <style>
+              #g{
+                height: 100vh;
+                background: url(https://www.edecofy.com/blog/wp-content/uploads/2019/08/School-Management-System-Edecofy.png);
+                background-size: cover;
+              }
+              #login{
+                position:absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: 400px;
+                background: white;
+                border-radius: 10px;
+                font-family: montserrat;
+                
+            }
+            
+            </style>
+            <title>Students Management</title>
+        </head>
+        <body id="g"> 
+          
+           <form method="post" action="/studentslogin">
+            {% csrf_token %}
+        
+            <div class="container" id="login" >
+                <div class="row" >
+                
+                    <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
+                      <br>
+                        <h1 align="center">Students Login</h1>
+                         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                          <label for="user" class="form-label">User Name:</label>
+                            <input type="text" placeholder="Enter username" class="form-control" name="uname" id="uname">
+                         </div>
+                         <br>
+                         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                          <label for="pass" class="form-label">Password:</label>
+                          <input type="password" placeholder="Enter Password" class="form-control" name="passwrd" id="passwrd">
+                         </div>
+                         <br>
+                         <div class="col col-12 col-sm-6 col-md-6 col lg-6 col-xl-6 col-xxl-6" style="padding: 10px;">
+                          <!-- <a href="/user_home" class="btn btn-primary">Login</a> -->
+                          <button class="btn btn-primary" type="submit">Login</button>
+        
+                        </div>
+                        <div class="col col-12 col-sm-6 col-md-6 col lg-6 col-xl-6 col-xxl-6" style="padding: 10px;">
+                         <p>New user?<a href="/signup">Sign Up</a></p> 
+                          <!-- <button class="btn btn-primary" type="submit">Signup</button> -->
+        
+                        </div>
+                       
+                    <br>
+                        <!-- <div align="center" style="color:black"> <a href="reset.html">Forgot Password?</a></div> -->
+                            
+                          </div>  
+                        
+                    </div>
+                </div>
+            </div>
+                        
+                    </div>
+                </div>
+            </div>
+           </form>
+        
+   
+
+ {% endblock %}
+  
+  

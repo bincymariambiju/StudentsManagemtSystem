@@ -1,0 +1,107 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+<style>
+  #g{
+      height: 140vh;
+      background: url(https://www.edecofy.com/blog/wp-content/uploads/2019/08/School-Management-System-Edecofy.png);
+      background-size: cover;
+    }
+    #course{
+      position:absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 400px;
+      background: white;
+      border-radius: 10px;
+      font-family: montserrat;
+      
+  }
+
+  .form input{
+          width: 240px;
+          height: 35px;
+          background: transparent;
+          border: 1px solid white;
+          border-top: none;
+          border-right: none;
+          color: white;
+          font-size: 15px;
+          letter-spacing: 1px;
+          margin-top: 30px;
+          font-family: sans-serif;
+      }
+      
+  ::placeholder{
+          color: white;
+          font-family: Arial;
+      }
+      
+  #sub{
+      width: 340px;
+          height: 40px;
+          background: rgb(95, 95, 99);
+          border: none;
+          /* margin-top: 1px; */
+          font-size: 18px;
+          border-radius: 10px;
+          cursor: pointer;
+          color: #fff;
+          transition: 0.4s ease;
+      
+
+  }
+</style>
+
+
+
+<form method="post" action="/update_course/{{studcamp.id}}" id="g">
+    {% csrf_token %}
+ <div class="container" id="course" >
+     <div class="row" >
+     
+         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
+           <br>
+             <h1 align="center">Update Course Details</h1>
+              <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+               <label for="cid" class="form-label"><h5>Course Id:</h5></label>
+                 <input type="number" id="cid" name="cid" placeholder="Enter Course Id" class="form-control" value="{{ studcamp.cid}}">
+              </div>
+              <br>
+              <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+               <label for="cname" class="form-label"><h5>Course Name:</h5></label>
+               <input type="text" id="cname" name="cname" placeholder="Enter Course " class="form-control" value="{{ studcamp.cname}}">
+              </div>
+              <br>
+              <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <label for="duration" class="form-label"><h5>Duration:</h5></label>
+                <input type="text" id="duration" name="duration" placeholder="Enter Duration" class="form-control" value="{{ studcamp.duration}}">
+               </div>
+               <br>
+               <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <label for="fee" class="form-label"><h5>Course Fee:</h5></label>
+                <input type="number" id="fee" name="fee" placeholder="Enter Course Fee" class="form-control" value="{{ studcamp.fee}}">
+               </div>
+             
+              <br>
+              <div class="col col-12 col-sm-6 col-md-6 col lg-6 col-xl-6 col-xxl-6" style="padding: 10px;">
+            <center><button type="submit" name="submit" id="sub" class="btn btn-dark">Update</button></center>
+             </div>
+            
+         <br>
+             <!-- <div align="center" style="color:black"> <a href="reset.html">Forgot Password?</a></div> -->
+                 
+               </div>  
+             
+         </div>
+     </div>
+ </div>
+             
+         </div>
+     </div>
+ </div>
+</form>
+
+<br><br><br>
+
+{% endblock %}
